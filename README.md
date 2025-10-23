@@ -1,10 +1,12 @@
 # RMCS
 fork后的仓库
 
-其中任务二的包task2
+其中任务二的包为task2
+
+
 .yaml文件名为signal
 
-
+----
 
 RoboMaster Control System based on ROS2.
 
