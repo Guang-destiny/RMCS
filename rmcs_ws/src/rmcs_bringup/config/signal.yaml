@@ -1,0 +1,25 @@
+rmcs_executor: 
+  ros__parameters: 
+    update_rate: 1000.0 
+    components:
+      - rmcs_core::controller::signal::SignalGenerator -> A
+      - rmcs_core::controller::signal::SignalAdd -> B
+      - rmcs_core::broadcaster::ValueBroadcaster -> ValueBroadcaster
+A:
+  ros__parameters:
+    omega: 3.1415926535897
+    sin_output: "/signal/sin"
+    cos_output: "/signal/cos"
+B:
+  ros__parameters:
+    sin_input: "/signal/sin"
+    cos_input: "/signal/cos"
+    signal_result: "/signal/result"
+
+
+ValueBroadcaster:
+  ros__parameters:
+    forward_list:
+      - /signal/sin
+      - /signal/cos
+      - /signal/result
